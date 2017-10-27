@@ -1,5 +1,7 @@
 package com.example.anaguz.clasetitularspinner;
 
+import java.io.Serializable;
+
 /**
  * Created by anaguz on 20/10/17.
  */

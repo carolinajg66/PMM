@@ -1,6 +1,9 @@
 package com.example.anaguz.clasetitular;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -35,11 +38,24 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick (AdapterView arg0, View arg1, int position, long id){
                 String mensaje ="Nombre:"+ datos[position].getNombre() +" Apellidos: "+ datos[position].getApellidos();
                 Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_LONG).show();
+
+
+                vampiros vampiro= datos[position];
+
+                Bundle miBundle = new Bundle();
+                miBundle.putSerializable("CLAVEobjecto",vampiro);
+
+                Intent intent = new Intent(MainActivity.this,Pantalla2.class);
+                intent.putExtras(miBundle);
+
+                startActivity(intent);
+
             }
 
         });
 
     }
+
 static class  ViewHolder{
 
         TextView titulo;
@@ -56,6 +72,7 @@ class AdaptadorTitulares extends ArrayAdapter {
         this.context = context;
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public View getView(int i, View convertView, ViewGroup parent) {
 
         ViewHolder holder;

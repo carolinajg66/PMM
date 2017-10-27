@@ -1,10 +1,12 @@
 package com.example.anaguz.clasetitular;
 
+import java.io.Serializable;
+
 /**
  * Created by anaguz on 20/10/17.
  */
 
-public class vampiros {
+public class vampiros implements Serializable{
 
     private String nombre;
     private String apellidos;
