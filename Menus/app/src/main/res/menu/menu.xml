@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/MnuOpc1"
+        android:title="Desarrollo">
+
+    </item>
+    <item
+        android:id="@+id/MnuOpc2"
+        android:title="Juego">
+        <menu>
+            <item android:id="@+id/SubMnuOpc1"
+                android:title="Juego 1" />
+            <item android:id="@+id/SubMnuOpc2"
+                android:title="Juego 2" />
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/MnuOpc3"
+        android:title="Acerca de ">
+
+    </item>
+</menu>
