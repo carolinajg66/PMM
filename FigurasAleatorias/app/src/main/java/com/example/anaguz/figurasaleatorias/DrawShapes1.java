@@ -11,6 +11,7 @@ public class DrawShapes1 extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draw_shapes1);
+
         mDrawingArea = (RandomShapeView) findViewById(R.id.drawing_area);
 
     }
