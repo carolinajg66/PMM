@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+>
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Nombre Y Apellidos: \n Ana Carolina Justiniano "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_below="@+id/version"
+        android:layout_marginTop="28dp"
+        android:textStyle="normal|bold" />
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logopizza"
+        android:id="@+id/imageView2" />
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Version: 1.2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_below="@+id/version"
+        android:layout_marginTop="28dp"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Compañia: J.P's Pizzeria "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_below="@+id/version"
+        android:layout_marginTop="28dp"
+        android:textStyle="normal|bold" />
+
+
+    <Button
+        android:text="Volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/volver"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        />
+
+</LinearLayout>
