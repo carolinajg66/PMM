@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,10 +23,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     //Lista para el spinner
     private pizza[] datos = new pizza[]{
-            new pizza("Margarita ", "Jamon/Tomate", 12),
-            new pizza("Tres Quesos", "Queso 1/Queso 2", 15),
-            new pizza("Barbacoa", "Carne/Tomate", 15),
-            new pizza("Pepperoni ", "Queso/Pepperoni", 12),
+            new pizza("Margarita ", "Jamon/Tomate", 12,R.drawable.pizza1),
+            new pizza("Tres Quesos", "Queso 1/Queso 2", 15, R.drawable.pizza2),
+            new pizza("Barbacoa", "Carne/Tomate", 15, R.drawable.pizza3),
+            new pizza("Pepperoni ", "Queso/Pepperoni", 12, R.drawable.pizza4),
     };
 
     private Object[] calculos;
@@ -62,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 double preciozona = datos[zonas.getSelectedItemPosition()].getPrecio();
                 pizza destino = new pizza (datos[zonas.getSelectedItemPosition()].getNombre(),
                         datos[zonas.getSelectedItemPosition()].getDescripcion(),
-                        datos[zonas.getSelectedItemPosition()].getPrecio());
+                        datos[zonas.getSelectedItemPosition()].getPrecio(),
+                        datos[zonas.getSelectedItemPosition()].getImage());
                 pasoobjetos.putSerializable("destino", destino);
                 paso.putExtras(pasoobjetos);
 
@@ -161,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        //FALTA HOLDER
+
         public View getView(int i, View convertView, ViewGroup parent){
             LayoutInflater inflater = context.getLayoutInflater();
             View item = inflater.inflate(R.layout.item_spinner, null);
@@ -173,6 +177,10 @@ public class MainActivity extends AppCompatActivity {
 
             TextView lblPrecio = (TextView)item.findViewById(R.id.campoPrecio);
             lblPrecio.setText(String.valueOf(datos[i].getPrecio()) + "€");
+
+
+            ImageView imagen = (ImageView) item.findViewById(R.id.imageSpinner);
+            imagen.setBackground(getDrawable(datos[i].getImage()));
 
             return (item);
         }

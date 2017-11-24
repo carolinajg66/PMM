@@ -11,12 +11,22 @@ public class pizza implements Serializable{
     private  String nombre;
     private  String descripcion;
     private  double precio;
+    private  int image;
 
-    public pizza (String nombre, String descripcion, double precio){
+    public pizza (String nombre, String descripcion, double precio, int image){
 
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.image=image;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public String getNombre() {

@@ -30,7 +30,7 @@ public class Factura extends AppCompatActivity {
 
 
   Bundle miBundle = getIntent().getExtras();
-  pizza pizza = (pizza) miBundle.getSerializable("informacion");
+  pizza pizza = (pizza) miBundle.getSerializable("Informacion");
 
   Nombre.setText(pizza.getNombre());
   //preciobase.setText(pizza.getPrecio());
