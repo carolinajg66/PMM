@@ -163,27 +163,77 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        //FALTA HOLDER
+        class ViewHolder{
 
-        public View getView(int i, View convertView, ViewGroup parent){
-            LayoutInflater inflater = context.getLayoutInflater();
-            View item = inflater.inflate(R.layout.item_spinner, null);
+            TextView nombre;
+            TextView descripcion ;
+            TextView precio;
+            ImageView image;
 
-            TextView lblTitulo = (TextView) item.findViewById(R.id.campoZona);
-            lblTitulo.setText(datos[i].getNombre());
+        }
 
-            TextView lblSubtitulo = (TextView) item.findViewById(R.id.campoContinente);
-            lblSubtitulo.setText(datos[i].getDescripcion());
+        public View getView(int i, View convertView, ViewGroup parent) {
 
-            TextView lblPrecio = (TextView)item.findViewById(R.id.campoPrecio);
-            lblPrecio.setText(String.valueOf(datos[i].getPrecio()) + "€");
+            ViewHolder holder;
+            View item = convertView;
+
+            if (item == null) {
+                LayoutInflater inflater = context.getLayoutInflater();
+                item = inflater.inflate(R.layout.item_spinner, null);
+
+                holder = new ViewHolder();
+                holder.nombre = (TextView) item.findViewById(R.id.campoNombre);
+                holder.descripcion = (TextView) item.findViewById(R.id.campoDescripcion);
+                holder.precio= (TextView) item.findViewById(R.id.campoPrecio);
+                holder.image =(ImageView) item.findViewById(R.id.imageSpinner);
+
+                item.setTag(holder);
+
+            } else {
+                holder = (ViewHolder) item.getTag();
+            }
+  //Terminar esto
+            holder.nombre.setText(datos[i].getNombre());
+            holder.descripcion.setText(datos[i].getDescripcion());
+            holder.precio.setBackground(getDrawable(datos[i].getImagen()));
 
 
-            ImageView imagen = (ImageView) item.findViewById(R.id.imageSpinner);
-            imagen.setBackground(getDrawable(datos[i].getImage()));
+
+            TextView IblTitulo = (TextView) item.findViewById(R.id.tvTitulo);
+            IblTitulo.setText(datos[i].getNombre());
+
+            TextView IblSubtitulo = (TextView) item.findViewById(R.id.tvSubtitulo);
+            IblSubtitulo.setText(datos[i].getApellidos());
+
+            ImageView imagen = (ImageView) item.findViewById(R.id.ivImagen);
+            imagen.setBackground(getDrawable(datos[i].getImagen()));
 
             return (item);
+
+
         }
+
+        //FALTA HOLDER
+
+//        public View getView(int i, View convertView, ViewGroup parent){
+//            LayoutInflater inflater = context.getLayoutInflater();
+//            View item = inflater.inflate(R.layout.item_spinner, null);
+//
+//            TextView lblTitulo = (TextView) item.findViewById(R.id.campoZona);
+//            lblTitulo.setText(datos[i].getNombre());
+//
+//            TextView lblSubtitulo = (TextView) item.findViewById(R.id.campoContinente);
+//            lblSubtitulo.setText(datos[i].getDescripcion());
+//
+//            TextView lblPrecio = (TextView)item.findViewById(R.id.campoPrecio);
+//            lblPrecio.setText(String.valueOf(datos[i].getPrecio()) + "€");
+//
+//
+//            ImageView imagen = (ImageView) item.findViewById(R.id.imageSpinner);
+//            imagen.setBackground(getDrawable(datos[i].getImage()));
+//
+//            return (item);
+//        }
 
     }
 }

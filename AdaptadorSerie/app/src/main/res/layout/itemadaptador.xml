@@ -9,20 +9,19 @@
         android:id="@+id/campoNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
     <TextView
-        android:id="@+id/campoDescripcion"
+        android:id="@+id/campoCreador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
     <TextView
-        android:id="@+id/campoPrecio"
+        android:id="@+id/campoTemporadas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <ImageView
-        android:id="@+id/imageSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:id="@+id/ivImagen"/>
+
 
 </LinearLayout>

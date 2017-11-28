@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
                 Pizza destino = new Pizza (datos[zonas.getSelectedItemPosition()].getNombre(),
                         datos[zonas.getSelectedItemPosition()].getDescripcion(),
                         datos[zonas.getSelectedItemPosition()].getPrecio());
+
+
                 pasoobjetos.putSerializable("destino", destino);
                 paso.putExtras(pasoobjetos);
 
