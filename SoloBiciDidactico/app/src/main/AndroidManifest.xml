@@ -12,7 +12,9 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".Juego"></activity>
+        <activity android:name=".Juego"
+            android:label="Juego..." >
+        </activity>
         <activity android:name=".AcercaDe"></activity>
         <activity android:name=".SoloBici">
             <intent-filter>
