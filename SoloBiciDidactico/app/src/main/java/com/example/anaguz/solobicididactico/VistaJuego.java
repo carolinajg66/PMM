@@ -111,6 +111,9 @@ public class VistaJuego extends View {
 		bici.setPosX(canvas.getWidth()/2);
 		bici.setPosY(canvas.getHeight()/2);
 
+		if(ruedaActiva){
+			rueda.dibujaGrafico(canvas);
+		}
 
 
 		
@@ -225,6 +228,7 @@ public class VistaJuego extends View {
 		//Obtenemos la posición de la pulsación
 		float x=evento.getX();
 		float y=evento.getY();
+		bici.setAngulo(((int) anguloBiciDesdeClick(evento)));
 		switch (evento.getAction()) {
 			//Al comenzar pulsación (ACTION_DOWN) se activa la variable disparo
 			case MotionEvent.ACTION_DOWN:
@@ -233,21 +237,22 @@ public class VistaJuego extends View {
 			//Comprobar pulsación continuada con desplazamiento hor/ver.
 			//Si es asi, desactivamos disparo: se tratará de un movimiento
 			//se trata de un movimiento en vez de  un disparo.
-			case MotionEvent.ACTION_MOVE:
-				float dx=Math.abs(x-mX);
-				float dy=Math.abs(y-mY);
-				//Un desplazamiento del dedo horizontal hace girar la bici.
-				if (dy<6 && dx>6)
-				{
-					giroBici = Math.round((x-mX)/2);
-					disparo = false;
-				} else //Un desplazamiento vertical produce una aceleración.
-					if (dx<6 && dy>6)
-					{
-						aceleracionBici = Math.round((mY-y)/25);
-						disparo = false;
-					}
-				break;
+//			case MotionEvent.ACTION_MOVE:
+//				float dx=Math.abs(x-mX);
+//				float dy=Math.abs(y-mY);
+//
+//				//Un desplazamiento del dedo horizontal hace girar la bici.
+//				if (dy<6 && dx>6)
+//				{
+//					giroBici = Math.round((x-mX)/2);
+//					disparo = false;
+//				} else //Un desplazamiento vertical produce una aceleración.
+//					if (dx<6 && dy>6)
+//					{
+//						aceleracionBici = Math.round((mY-y)/25);
+//						disparo = false;
+//					}
+//				break;
 			//Si se levanta el dedo (ACTION_UP) sin haberse producido desplazamiento horizontal o vertical
 			//disparo estará activado y lo que hacemos es disparar
 			case MotionEvent.ACTION_UP:
@@ -260,6 +265,28 @@ public class VistaJuego extends View {
 		}
 		mX=x; mY=y;
 		return true;
+	}
+	public double anguloBiciDesdeClick(MotionEvent motionEvent) {
+
+		double retorno = 0;
+
+		if (motionEvent.getY() > this.getHeight() / 2) {
+
+			double auxDistancia = Grafico.distanciaE(this.getWidth() / 2, this.getHeight() / 2, motionEvent.getX(), motionEvent.getY());
+			double auxBase = (motionEvent.getX() - (this.getWidth() / 2));
+
+			retorno = Math.toDegrees(Math.acos(auxBase / auxDistancia));
+
+		} else
+		{
+
+			double auxDistancia = Grafico.distanciaE(this.getWidth() / 2, this.getHeight() / 2, motionEvent.getX(), motionEvent.getY());
+			double auxBase = (motionEvent.getX() - (this.getWidth() / 2));
+
+			retorno = 360-Math.toDegrees(Math.acos(auxBase / auxDistancia));
+
+		}
+		return retorno;
 	}
 
 

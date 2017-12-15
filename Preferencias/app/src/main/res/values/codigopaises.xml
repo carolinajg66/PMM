@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pais">
+        <item name="España"></item>
+        <item name="Francia"></item>
+        <item name="Alemania"></item>
+    </string-array>
+    <string-array name="codigopais">
+        <item name="ESP"></item>
+        <item name="FRA"></item>
+        <item name="ALE"></item>
+
+    </string-array>
+
+</resources>

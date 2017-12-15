@@ -7,6 +7,7 @@
     android:padding="30dip"
     android:background="@drawable/degradado" >
 
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
