@@ -14,7 +14,7 @@
         android:gravity="center"
         android:textSize="25sp"
         android:layout_marginBottom="20dip"
-        android:textColor="#ff0000"
+        android:textColor="#d10c0c"
         android:text="@string/tituloAplicacion" />
 
     <Button
