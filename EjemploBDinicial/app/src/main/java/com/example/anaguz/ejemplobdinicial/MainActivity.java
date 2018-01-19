@@ -36,36 +36,31 @@ public class MainActivity extends Activity {
         //Obtenemos referencia a la base de datos para poder modificarla.
         SQLiteDatabase bd = cliBDh.getWritableDatabase();
 
-        //En caso de abrir de forma correcta la base de datos
+
         if (bd != null) {
-            //Introducimos 3 clientes de ejemplo
+
             for (int cont = 1; cont <= 3; cont++) {
                 //Creamos los datos
                 int codigo = cont;
                 String nombre = "Cliente" + cont;
                 String telefono = cont + "XXXXXXX";
 
-                //Introducimos los datos en la tabla Clientes
+
                 bd.execSQL("INSERT INTO Clientes (codigo, nombre, telefono) " +
                         "VALUES (" + codigo + ", '" + nombre + "', '" + telefono + "')");
             }
 
-            //Insertar un registro
+
             bd.execSQL("INSERT INTO Clientes (nombre, telefono) VALUES ('cli1','11111') ");
-            //Actualizar un registro
+
             bd.execSQL("UPDATE Clientes SET telefono='00000' WHERE nombre='cli1' ");
-            //Eliminar un registro
+
             bd.execSQL("DELETE FROM Clientes WHERE nombre='cli1' ");
 
-            //Ejemplo de utilización del método insert()
-            //Creamos el registro que queremos insertar utilizando un objeto ContentValues
             ContentValues nuevoRegistro = new ContentValues();
             nuevoRegistro.put("nombre", "cli10");
             nuevoRegistro.put("telefono", "101010");
-            //Insertamos el registro en la base de datos
-            //El primer parámetro es el nombre de la tabla donde insertaremos.
-            //El segundo parámetro solo sirve en caso de introducir un registro vacio
-            //El tercer paráemtro es el objeto ContentValues que contiene el registro a insertar
+
             bd.insert("Clientes", null, nuevoRegistro);
 
             //Ejemplo de utilización del método update()
