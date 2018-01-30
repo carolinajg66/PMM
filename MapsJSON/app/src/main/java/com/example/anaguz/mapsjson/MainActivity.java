@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editlongitud  = null;
 
     private Button botonCalcular=null;
+    private String direccion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +58,14 @@ public class MainActivity extends AppCompatActivity {
         botonCalcular= (Button) findViewById(R.id.calcular);
 
 
-        final String url = ("http://maps.googleapis.com/maps/api/geocode/json?"
-                +"latlng="+ editlatitud.getText().toString() +" ,"
-                +editlongitud.getText().toString() +"&sensor=false");
+
 
         botonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final String url = ("http://maps.googleapis.com/maps/api/geocode/json?"
+                        +"latlng="+ editlatitud.getText().toString() +" ,"
+                        +editlongitud.getText().toString() +"&sensor=false");
                 new AsyncHttpTask().execute(url);
             }
         });
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 /* forming th java.net.URL object */
                 URL url = new URL(params[0]);
+
 
                 urlConnection = (HttpURLConnection) url.openConnection();
 
@@ -115,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
             } catch (Exception e) {
                 Log.d(TAG, e.getLocalizedMessage());
+
             }
 
             return result; //"Failed to fetch data!";
@@ -123,16 +127,18 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Integer result) {
+
+            Toast.makeText(getApplicationContext(), direccion, Toast.LENGTH_SHORT).show();
             /* Download complete. Lets update UI */
 
-            if(result == 1){
+            /*if(result == 1){
 
                 arrayAdapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, blogTitles);
 
                 listView.setAdapter(arrayAdapter);
             }else{
                 Log.e(TAG, "Failed to fetch data!");
-            }
+            }*/
         }
     }
 
@@ -155,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
         return result;
     }
+
     private void parseResult(String result) {
 
         try{
@@ -164,9 +171,10 @@ public class MainActivity extends AppCompatActivity {
 
             JSONObject ubicacion= results.getJSONObject(0);
 
-            String direccion = ubicacion.getString("formatted_address");
+            direccion = results.optJSONObject(0).getString("formatted_address");
+//            direccion = response.toString();
 
-            Toast.makeText(this, direccion, Toast.LENGTH_SHORT).show();
+
 
             //blogTitles = new String[posts.length()];
 
