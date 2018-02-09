@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <PreferenceCategory android:title="Categoría 1">
+
+        <CheckBoxPreference
+            android:key="opcion1"
+            android:summary="Drescripción preferencia1 "
+            android:title="Preferencia 1" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Categoría 2">
+        <ListPreference
+            android:key="opcion3"
+            android:summary="Drescripción preferencia3 "
+            android:title="Preferencia 3"
+            android:dialogTitle="Indicar Pais"
+            android:entries="@array/tareas"
+            android:entryValues="@array/codigotareas"/>
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

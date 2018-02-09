@@ -49,4 +49,6 @@ public class EjemploPreferencias extends AppCompatActivity {
         });
     }
 
+    //recogerPreferencias
+
     }

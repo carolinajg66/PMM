@@ -7,7 +7,6 @@ import java.util.UUID;
  * Entidad Libros
  */
 
-
 public class Libros {
 
     private String id;

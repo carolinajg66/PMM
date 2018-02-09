@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tareas">
+        <item name="Tareas de Mantenimiento"></item>
+        <item name="Tareas Docentes"></item>
+        <item name="Tareas de administración"></item>
+    </string-array>
+    <string-array name="codigotareas">
+        <item name="Tareas de Mantenimiento"></item>
+        <item name="Tareas Docentes"></item>
+        <item name="Tareas de administración"></item>
+
+    </string-array>
+
+</resources>

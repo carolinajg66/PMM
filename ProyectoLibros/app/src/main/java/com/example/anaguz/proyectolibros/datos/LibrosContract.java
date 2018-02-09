@@ -7,11 +7,16 @@ import android.provider.BaseColumns;
  * Esquema de la base de datos para libros
  */
 
-public class EsquemaLibros {
-    public static final class LawyerEntry implements BaseColumns {
-        /*LawyerEntry es una clase interna para guardar el nombre de las columnas de las tablas*/
-        public static final String TABLE_NAME ="libros";
+public class LibrosContract {
+    public static final class LibrosEntry implements BaseColumns {
 
+        //public static final int DATABASE_VERSION = 1;
+        //public static final String DATABASE_NAME = "libros.db";
+
+        /*LawyerEntry es una clase interna para guardar el nombre de las columnas de las tablas*/
+        public static final String TABLE_NAME ="Libros";
+
+        public static final String ID = "id";
         public static final String TITULO = "titulo";
         public static final String GENERO = "genero";
         public static final String AUTOR = "autor";
@@ -20,7 +25,7 @@ public class EsquemaLibros {
         public static final String PRESTADO = "prestado";
         public static final String PORTADA = "portada";
 
-        private LawyerEntry(){}
+        private LibrosEntry(){}
 
 
 
