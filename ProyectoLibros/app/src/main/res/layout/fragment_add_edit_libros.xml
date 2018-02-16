@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".addeditlibros.AddEditLibrosFragment">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Titulo"
+            android:inputType="text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:text="Harry potter" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_genero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_genero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Genero"
+            tools:text="Aventura" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_autor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_autor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Autor"
+            android:inputType="text"
+            tools:text="J.K.Rowling"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_isbn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ISBN"
+            android:inputType="text"
+            tools:text="111222555"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_prestado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_prestado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prestado"
+            android:inputType="text"
+            tools:text="si"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_sipnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_sipnosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:hint="Sipnosis"
+            android:imeOptions="actionDone"
+            android:inputType="text|textMultiLine"
+            tools:text="@string/lorem" />
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>
